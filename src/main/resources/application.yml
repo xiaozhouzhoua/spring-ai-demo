@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-ai-demo
+  ai:
+    openai:
+      api-key: ${OPENROUTER_API_KEY}
+      base-url: https://openrouter.ai/api
+      chat:
+        options:
+          model: xiaomi/mimo-v2-flash:free
+
+exa:
+  api-key: ${EXA_API_KEY:}
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG

@@ -1,0 +1,9 @@
+### 获取随机生成的人员列表
+GET http://localhost:8080/api/persons
+Accept: application/json
+
+### 联网搜索（需配置 EXA_API_KEY）
+GET http://localhost:8080/api/search?q=What is the latest version of Spring Boot?
+Accept: application/json
+
+###

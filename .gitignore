@@ -1,0 +1,15 @@
+# Environment
+.env
+
+# Build
+target/
+
+# IDE
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS
+.DS_Store

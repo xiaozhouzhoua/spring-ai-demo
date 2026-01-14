@@ -38,8 +38,11 @@ public class ChatController {
     // JSON Stream 格式流式响应
     @PostMapping(value = "/stream/json", produces = "application/stream+json")
     public ResponseEntity<Flux<ChatChunk>> streamChatJson(@RequestBody ChatRequest request) {
-        Flux<ChatChunk> stream = chatService.streamChat(request.sessionId(), request.message())
-            .map(ChatChunk::new);
+        Flux<ChatChunk> stream = chatService.streamChat(
+            request.sessionId(), 
+            request.message(),
+            request.enableSearch() != null && request.enableSearch()
+        ).map(ChatChunk::new);
         return ResponseEntity.ok()
             .header("Cache-Control", "no-cache")
             .header("X-Accel-Buffering", "no")
